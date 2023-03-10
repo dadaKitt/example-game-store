@@ -9,3 +9,9 @@ MiyukiShop V.0.0.1
 
 # How to Use
 Downloads sql files and include to your database (mysql, nosql, heidisql, phpmyadmin) and start apache and mysql.
+
+<img src="pre/login.png">
+<img src="pre/home.png">
+<img src="pre/stock.png">
+<img src="pre/topup.png">
+<img src="pre/admin.png">
