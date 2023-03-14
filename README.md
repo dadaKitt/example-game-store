@@ -14,4 +14,3 @@ Downloads sql files and include to your database (mysql, nosql, heidisql, phpmya
 <img src="pre/home.png">
 <img src="pre/stock.png">
 <img src="pre/topup.png">
-<img src="pre/admin.png">
