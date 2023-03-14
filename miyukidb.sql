@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 10, 2023 at 02:07 PM
+-- Generation Time: Mar 14, 2023 at 03:10 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 7.4.30
 
@@ -48,6 +48,31 @@ CREATE TABLE `history_tb` (
   `h_price` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `h_date` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `producttb`
+--
+
+CREATE TABLE `producttb` (
+  `p_id` int(11) NOT NULL,
+  `p_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `p_subtitle` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `p_sub2` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `p_sub3` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `p_sub4` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `p_price` int(11) DEFAULT NULL,
+  `p_img` text COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `producttb`
+--
+
+INSERT INTO `producttb` (`p_id`, `p_name`, `p_subtitle`, `p_sub2`, `p_sub3`, `p_sub4`, `p_price`, `p_img`) VALUES
+(1, 'Netflix 30วัน', 'Netflix 30วัน', 'เทส', 'เทส', 'เทส', 100, ''),
+(2, 'Discord Nitro', 'เทส', 'เทส', 'เทส', 'เทส', 25, '');
 
 -- --------------------------------------------------------
 
@@ -140,6 +165,12 @@ ALTER TABLE `history_tb`
   ADD PRIMARY KEY (`h_id`);
 
 --
+-- Indexes for table `producttb`
+--
+ALTER TABLE `producttb`
+  ADD PRIMARY KEY (`p_id`);
+
+--
 -- Indexes for table `rand_tb`
 --
 ALTER TABLE `rand_tb`
@@ -172,6 +203,12 @@ ALTER TABLE `cart_tb`
 --
 ALTER TABLE `history_tb`
   MODIFY `h_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `producttb`
+--
+ALTER TABLE `producttb`
+  MODIFY `p_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `rand_tb`
