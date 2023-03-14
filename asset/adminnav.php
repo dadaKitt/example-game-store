@@ -65,8 +65,8 @@
 
 </style>
 <div class="topnav" id="myTopnav">
-    <a href="#" class="active"><i class="fa fa-home"></i>&nbsp;หน้าแรก</a>
-    <a href="#"><i class='fas fa-shopping-cart'></i>&nbsp;รายละเอียดสินค้า</a>
+    <a href="admin.php" class="active"><i class="fa fa-home"></i>&nbsp;หน้าแรก</a>
+    <a href="add_product.php"><i class='fas fa-shopping-cart'></i>&nbsp;รายละเอียดสินค้า</a>
     <a href="#"><i class='fas fa-coins'></i>&nbsp;รายละเอียดการเติมเงิน</a>
     <a href="#"><i class='fas fa-shopping-basket'></i>&nbsp;แก้ไขข้อมูลบุคคล</a>
     <!-- <a href="" disable>ยินดีต้อนรับ <i class='fas fa-user-alt'></i>&nbsp;<?php echo $_SESSION['Username']; ?></a> -->
@@ -84,7 +84,6 @@
         <li><a style="color:#fff;">&nbsp;ข้อมูลส่วนตัว</a></li>
         <li><a disable style="color:#fff;">Points:&nbsp;<?php echo $_SESSION['Point']; ?></a></li>
       </ul>
-    <a href="customernav.php"><i class='fas fa-user-alt'></i>&nbsp;โปรไฟล์</a>
       <a href="./functions/logout.php"><i class='fas fa-coins'></i>&nbsp;ออกจากระบบ</a>
     </div>
   </div>
