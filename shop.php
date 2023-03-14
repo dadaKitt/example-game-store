@@ -1,7 +1,7 @@
 <?php 
     session_start();
     include_once("./db/connect_db.php");
-    $sql = "SELECT * FROM shop";
+    $sql = "SELECT * FROM producttb";
     $query = $conn->query($sql);
 
 ?>
@@ -78,94 +78,24 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4">
+        <?php while($row = mysqli_fetch_assoc($query)): ?>
+        <<div class="col-md-4">
           <div class="card">
             <div class="card-block">
-              <img src="asset/สุ่มรหัสValorant.png" alt="" width="100%" style="border-radius: 25px;">
-              <h4 class="card-title">สุ่มไอดีValorant 2</h4>
-              <h6 class="card-subtitle text-muted">สุ่มรหัสValorant สกิน 0-20 อัน</h6>
-              <p class="card-text p-y-1">✅รหัสอาจจะมีคนเข้าเล่นได้ตลอดเวลา</p>
-              <p class="card-text p-y-1">✅มีปัญหาแค่ไอดีโดนแบนไอดีเข้าไม่ได้ภายใน 10 นาทีเคลมได้</p>
-              <p class="card-text p-y-1">❎เปลี่ยนไอดี-รหัสไม่ได้</p>
-              <p class="card-text p-y-1">💰5บาท</p>
+              <h4 class="card-title"><?php echo $row['p_name']; ?>
+              </h4>
+              <img src="<?php echo $row['p_img']; ?>" alt="" width="100%" style="border-radius: 25px;">
+              <h6 class="card-subtitle text-muted"><?php echo $row['p_subtitle']; ?></h6>
+              <p class="card-text p-y-1">❎<?php echo $row['p_sub2']; ?></p>
+              <p class="card-text p-y-1">❎<?php echo $row['p_sub3']; ?></p>
+              <p class="card-text p-y-1">❎<?php echo $row['p_sub4']; ?></p>
+              <p class="card-text p-y-1">💰<?php echo $row['p_price']; ?></p>
               <a name="" id="" class="btn btn-succuss" href="rand-valorant01.php" role="button" style="color:red;">เลือกดู</a>
             </div>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-block">
-              <img src="asset/สุ่มรหัสValorant.png" alt="" width="100%" style="border-radius: 25px;">
-              <h4 class="card-title">สุ่มไอดีValorant 3</h4>
-              <h6 class="card-subtitle text-muted">สุ่มรหัสValorant สกิน 0-20 อัน</h6>
-              <p class="card-text p-y-1">✅รหัสอาจจะมีคนเข้าเล่นได้ตลอดเวลา</p>
-              <p class="card-text p-y-1">✅มีปัญหาแค่ไอดีโดนแบนไอดีเข้าไม่ได้ภายใน 10 นาทีเคลมได้</p>
-              <p class="card-text p-y-1">❎เปลี่ยนไอดี-รหัสไม่ได้</p>
-              <p class="card-text p-y-1">💰5บาท</p>
-              <a name="" id="" class="btn btn-succuss" href="rand-valorant01.php" role="button" style="color:red;">เลือกดู</a>
-            </div>
-          </div>
-        </div>
-        <!-- <div class="col-md-4">
-          <div class="card">
-            <div class="card-block">
-              <h4 class="card-title">Card title</h4>
-              <h6 class="card-subtitle text-muted">Support card subtitle</h6>
-              <p class="card-text p-y-1">Some quick example text to build on the card title .</p>
-              <a href="#" class="card-link">link</a>
-              <a href="#" class="card-link">Second link</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-block">
-              <h4 class="card-title">Card title</h4>
-              <h6 class="card-subtitle text-muted">Support card subtitle</h6>
-              <p class="card-text p-y-1">Some quick example text to build on the card title .</p>
-              <a href="#" class="card-link">link</a>
-              <a href="#" class="card-link">Second link</a>
-            </div>
-          </div>
-        </div>
-      </div><br>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-block">
-              <h4 class="card-title">Card title</h4>
-              <h6 class="card-subtitle text-muted">Support card subtitle</h6>
-              <p class="card-text p-y-1">Some quick example text to build on the card title .</p>
-              <a href="#" class="card-link">link</a>
-              <a href="#" class="card-link">Second link</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-block">
-              <h4 class="card-title">Card title</h4>
-              <h6 class="card-subtitle text-muted">Support card subtitle</h6>
-              <p class="card-text p-y-1">Some quick example text to build on the card title .</p>
-              <a href="#" class="card-link">link</a>
-              <a href="#" class="card-link">Second link</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-block">
-              <h4 class="card-title">Card title</h4>
-              <h6 class="card-subtitle text-muted">Support card subtitle</h6>
-              <p class="card-text p-y-1">Some quick example text to build on the card title .</p>
-              <a href="#" class="card-link">link</a>
-              <a href="#" class="card-link">Second link</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
+        <?php endwhile ?>
+        
   </main>
   <footer>
     <!-- place footer here -->
